@@ -1,0 +1,252 @@
+
+# all imports
+import time
+import random
+import sys
+import os
+import t
+# all ascii drawings
+
+logo='''
++===========================================================+
+ █    ██  ██▀███    ▄████  ▄▄▄     ▄▄▄█████▓ ██░ ██   ██████    
+ ██  ▓██▒▓██ ▒ ██▒ ██▒ ▀█▒▒████▄   ▓  ██▒ ▓▒▓██░ ██▒▒██    ▒    
+▓██  ▒██░▓██ ░▄█ ▒▒██░▄▄▄░▒██  ▀█▄ ▒ ▓██░ ▒░▒██▀▀██░░ ▓██▄      
+▓▓█  ░██░▒██▀▀█▄  ░▓█  ██▓░██▄▄▄▄██░ ▓██▓ ░ ░▓█ ░██   ▒   ██▒   
+▒▒█████▓ ░██▓ ▒██▒░▒▓███▀▒ ▓█   ▓██▒ ▒██▒ ░ ░▓█▒░██▓▒██████▒▒   
+░▒▓▒ ▒ ▒ ░ ▒▓ ░▒▓░ ░▒   ▒  ▒▒   ▓▒█░ ▒ ░░    ▒ ░░▒░▒▒ ▒▓▒ ▒ ░   
+░░▒░ ░ ░   ░▒ ░ ▒░  ░   ░   ▒   ▒▒ ░   ░     ▒ ░▒░ ░░ ░▒  ░ ░   
+ ░░░ ░ ░   ░░   ░ ░ ░   ░   ░   ▒    ░       ░  ░░ ░░  ░  ░     
+   ░        ░           ░       ░  ░         ░  ░  ░      ░
+
+▄▄▄█████▓ ▒█████   ███▄ ▄███▓ ▄▄▄▄   
+▓  ██▒ ▓▒▒██▒  ██▒▓██▒▀█▀ ██▒▓█████▄ 
+▒ ▓██░ ▒░▒██░  ██▒▓██    ▓██░▒██▒ ▄██
+░ ▓██▓ ░ ▒██   ██░▒██    ▒██ ▒██░█▀  
+  ▒██▒ ░ ░ ████▓▒░▒██▒   ░██▒░▓█  ▀█▓
+  ▒ ░░   ░ ▒░▒░▒░ ░ ▒░   ░  ░░▒▓███▀▒
+    ░      ░ ▒ ▒░ ░  ░      ░▒░▒   ░ 
+  ░      ░ ░ ░ ▒  ░      ░    ░    ░ 
+             ░ ░         ░    ░
+
+                  ,  /\\  .  
+                 //`-||-'\\\\ 
+                (| -=||=- |) 
+                 \\\\,-||-.// 
+                     ||  '  
+                     ||     
+                     ||                
+                     ||    
+                     ||
+                     || 
+                     ()
+
+               (  .      )
+           )           (              )
+                 .  '   .   '  .  '  .
+        (    , )       (.   )  (   ',    )
+         .' ) ( . )    ,  ( ,     )   ( .
+      ). , ( .   (  ) ( , ')  .' (  ,    )
+     (_,) . ), ) _) _,')  (, ) '. )  ,. (' )
+==========================================================
++=========================================================+
+
+
+'''
+
+help_men='''
++=========================+
+[]                      []
+[]       _________      []
+[]      |         \\     []
+[]{@}===}==========>    []
+[]      |_________/     []
+[]                      []
+[]______________________[]
+enter in what you would like
+to do !Based on the options!
+
+Example
+Ogre swings
+==run==fight==option==
+>>>run
++=========================+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@
+!Press enter to go back to!
+@@@@@@@!main menu!@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@
++=========================+
+'''
+
+main_menu='''
++================================+
+       _
+      / \\
+      |  \\
+      |   |
+      |  /   % Play
+      |  \  % Help
+      |   |   % Options
+    +==(*)==+
+       (|)      
+       (|)
++================================+
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@!
+!@@@@@@!Created by Brody!@@@@@@@@!
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@!
++================================+
+'''
+
+options='''
++===================================+
+Here you can find all art and
+cheat codes
+         ___________________
+         |                  \\
+()=====(*)===================|
+         |__________________/
+    *Coming Soon*
+
++===================================+
+'''
+
+#Game launcher
+def true_run():
+    print('+================+')
+    print('!loading new game!')
+    print('+================+')
+    print('@@@@@@@@@@@@@@@@@@')
+    print('@@@@@@@@@@@@@@@@@@')
+    print('@@@@@@@@@@@@@@@@@@')
+    print('+================+')
+    time.sleep(1)
+    print('/')
+    time.sleep(1)
+    print('\\')
+    time.sleep(1)    
+         
+    # Game window
+
+    dif='''
+    +======================+
+           ______
+        .-"      "-.
+       /            \\
+      |              |
+      |,  .-.  .-.  ,|
+      | )(__/  \\__)( |
+      |/     /\     \\|
+      (_     ^^     _)
+       \\__|IIIIII|__/
+        | \IIIIII/ |
+        \\          /
+         `--------`
+    +======================+
+    @@@@@@@@@@@@@@@@@@@@@@@@
+    @Choose your difficulty@
+    @@@@@@@@@@@@@@@@@@@@@@@@
+    +======================+
+    @@@@@@@@@@@@@@@@@@@@@@@@
+    Medium=m Hard=h Easy=e
+    @@@@@@@@@@@@@@@@@@@@@@@@
+    +======================+
+    '''
+
+    import curses
+
+    screen = curses.initscr()
+
+    screen.addstr(0, 0, dif)
+    screen.refresh()
+
+    while True:
+        c=screen.getch()
+        if c==ord('m'):
+            playerdif='easy'
+            break
+        if c==ord('o'):
+            playerdif='medium'
+            break
+        if c==ord('p'):
+            playerdif='hard'
+            break
+        if c!=ord('p'or'm'or'o'):
+            screen.addstr('incorrect statement')
+            screen.refresh()
+
+
+    screen.clear()
+
+    curses.napms(3000)
+
+    while True:
+        pass
+
+# help function
+def help_():
+    print(help_men)
+    input('>>>')
+    true()
+    
+# slowprint system
+def slowprint(str):
+    for c in str + '\n':
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(0.2)
+
+#fastprint system
+def fastprint(str):
+    for c in str + '\n':
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(0)
+
+#option function
+def option():
+    print(options)
+    print('!Press enter to continue!')
+    input('>>>')
+    true()
+
+# beginning of game
+input('>>>')
+slowprint('welcome to...')
+print(logo, 'red')
+print('press enter to continue')
+input('>>>')
+    
+# true function
+def true():
+    while True:
+        print(main_menu)
+        v=input('>>>')
+            
+        if v=='help':
+            help_()
+            
+        if v=='play':
+            true_run()
+            
+        if v=='options':
+            option()
+            
+        if v !='options'or'play'or'help':
+            print('incorrect statement')
+            while True:
+                v=input('>>>')
+                        
+                if v=='help':
+                    help_()
+                   
+                if v=='play':
+                    true_run()
+                    
+                if v=='options':
+                    option()
+
+                if v !='options'or'play'or'help':
+                    print('incorrect statement')
+
+true()
+
