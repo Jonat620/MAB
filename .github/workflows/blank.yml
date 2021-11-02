@@ -11,7 +11,7 @@ def Main():
     
     #screen stuffs
     wn = turtle.Screen()
-    wn.bgcolor("grey")
+    wn.bgcolor("black")
     wn.title("Maze Game")
     wn.setup(700,700)
     
@@ -139,9 +139,6 @@ def Main():
                 character = level[y][x]
                 screen_x = -288 + (x * 20)
                 screen_y = 288 - (y * 20)
-
-                if character == 'e':
-                    
      
                 if character == "#":
                     pen.goto(screen_x, screen_y)
@@ -177,11 +174,11 @@ def Main():
     setup_maze(levels[1])
      
     #keyboard binding
-    turtle.listen()
-    turtle.onkey(player.go_left,"a")
-    turtle.onkey(player.go_right,"d")
-    turtle.onkey(player.go_up,"w")
-    turtle.onkey(player.go_down,"s")
+    wn.listen()
+    wn.onkey(player.go_left,"a")
+    wn.onkey(player.go_right,"d")
+    wn.onkey(player.go_up,"w")
+    wn.onkey(player.go_down,"s")
      
     wn.tracer(0)
      
